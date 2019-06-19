@@ -13,17 +13,11 @@ import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class AboutUdimaWindow extends JDialog {
-
-	/**
-	 * Default serial id
-	 */
+public class AboutUdimaWindow extends JDialog 
+{
 	private static final long serialVersionUID = 1L;
-   // constants
 	private static final int WIDTH = 300;
 	private static final  int HEIGHT = 200;
-	
-	// componentes
 	private JPanel logoPanel;
 	private JPanel decorationEast;
 	private JPanel decorationWest;
@@ -33,22 +27,21 @@ public class AboutUdimaWindow extends JDialog {
 	private JLabel iconLabel;
 	private ImageIcon logoIcon;
 	
-	  public AboutUdimaWindow() throws IOException {
-		
+	  public AboutUdimaWindow() throws IOException 
+	  {
 		setTitle("AUTOUDIMA");	
 		setModal(true);
 		initComponents();
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setPreferredSize(new Dimension(WIDTH,HEIGHT));
-	    setResizable(false);
+	        setResizable(false);
 		pack();
 		setLocationRelativeTo(null);
-	    setVisible(false);
+	        setVisible(false);
 	  }
 	
-	
-	private void initComponents() throws IOException {
-		
+	private void initComponents() throws IOException 
+	{
 		getContentPane().setLayout(new BorderLayout());
 		logoPanel = new JPanel(new FlowLayout());
 		decorationEast = new JPanel();
@@ -57,12 +50,8 @@ public class AboutUdimaWindow extends JDialog {
 		decorationWest.setBackground(new Color(34,35,49));
 		logoIcon = new ImageIcon(ImageIO.read(new File("Resources/autocon.png")));
 		iconLabel = new JLabel(logoIcon);
-		
-	
-		
 		versionLabel = new JLabel("Version: AutoUdima.2.0 - 2018 ");
 		versionLabel.setFont(new Font("verdata",Font.PLAIN,15));
-		
 		imageCopyRightLabel = new JLabel("© Image design: Carolin Nothof" );
 		developmentCopyRightLabel = new JLabel("© Developed: Aitor Sanmartin Ferreia");
 		logoPanel.add(iconLabel);
@@ -72,7 +61,5 @@ public class AboutUdimaWindow extends JDialog {
 		this.add(decorationEast, BorderLayout.LINE_START);
 		this.add(decorationWest, BorderLayout.LINE_END);
 		this.add(logoPanel,BorderLayout.CENTER);
-		
 	}
-	
 }
